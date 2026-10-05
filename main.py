@@ -14,7 +14,7 @@ def find_highest(grades_list):
 def filter_passed(students_data):
     passed_students = []
     for student_name, student_grade in students_data.items():
-        if student_grade >= 70:
+        if student_grade >= 40:
             passed_students.append(student_name)
     return passed_students
 
@@ -27,10 +27,10 @@ def find_lowest(grades_list):
 def count_failed(students_data):
     failed_count = 0
     for student_name, student_grade in students_data.items():
-        if student_grade < 40:
+        if student_grade < 70:
             failed_count += 1
     return failed_count
-    
+
 def calculate_median(grades_list):
     if not grades_list:
         return 0.0
