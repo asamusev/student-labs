@@ -18,6 +18,19 @@ def filter_passed(students_data):
             passed_students.append(student_name)
     return passed_students
 
+def find_lowest(grades_list):
+    if not grades_list:
+        return None
+    lowest_value = min(grades_list)
+    return lowest_value
+
+def count_failed(students_data):
+    failed_count = 0
+    for student_name, student_grade in students_data.items():
+        if student_grade < 60:
+            failed_count += 1
+    return failed_count
+
 def main():
     students_data = {
         "Алиса": 85,
@@ -41,11 +54,15 @@ def main():
     
     average_grade = calculate_average(grades_list)
     highest_value = find_highest(grades_list)
+    lowest_value = find_lowest(grades_list)
     passed_students = filter_passed(students_data)
+    failed_count = count_failed(students_data)
     
     print(f"Средний балл: {average_grade:.2f}")
     print(f"Высший балл: {highest_value}")
+    print(f"Низший балл: {lowest_value}")
     print(f"Сдали экзамен: {', '.join(passed_students)}")
+    print(f"Не сдали экзамен: {failed_count}")
 
 if __name__ == "__main__":
     main()
