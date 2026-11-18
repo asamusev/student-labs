@@ -14,7 +14,7 @@ def find_highest(grades_list):
 def filter_passed(students_data):
     passed_students = []
     for student_name, student_grade in students_data.items():
-        if student_grade >= 40:
+        if student_grade >= 60:
             passed_students.append(student_name)
     return passed_students
 
@@ -27,7 +27,7 @@ def find_lowest(grades_list):
 def count_failed(students_data):
     failed_count = 0
     for student_name, student_grade in students_data.items():
-        if student_grade < 70:
+        if student_grade < 60:
             failed_count += 1
     return failed_count
 
@@ -46,20 +46,8 @@ def grade_range(grades_list):
         return 0
     highest_value = max(grades_list)
     lowest_value = min(grades_list)
-    return highest_value + lowest_value
+    return highest_value - lowest_value
 
-def value_grade(grade):
-    if grade >= 0:
-        return "1"
-    elif grade >= 60:
-        return "2"
-    elif grade >= 70:
-        return "3"
-    elif grade >= 80:
-        return "4"
-    elif grade >= 90:
-        return "5"
-    return "Invalid"
 
 def main():
     students_data = {
